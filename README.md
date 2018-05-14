@@ -4,7 +4,7 @@
 
 # ERC20 Token Balance Dapp
 
-A Simple Dapp to check a list of your ERC20 Token balance
+A Simple Dapp to check balances of your ERC20 Tokens
 
 ## Setup
 
