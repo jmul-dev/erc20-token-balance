@@ -2,9 +2,9 @@
 
 ---
 
-# Dapp Boilerplate
+# ERC20 Token Balance Dapp
 
-Template for setting up a single page Dapp using reactjs and truffle
+A Simple Dapp to check a list of your ERC20 Token balance
 
 ## Setup
 
