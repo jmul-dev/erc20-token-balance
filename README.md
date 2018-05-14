@@ -2,7 +2,7 @@
 
 ---
 
-# Mydapp Boilerplate
+# Dapp Boilerplate
 
 Template for setting up a single page Dapp using reactjs and truffle
 
