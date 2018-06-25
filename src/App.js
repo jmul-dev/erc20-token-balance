@@ -2,12 +2,15 @@ import React, { Component } from "react";
 import * as Web3 from "web3";
 import {
 	Wrapper,
+	TableWrapper,
+	TableCell,
 	Title,
 	Description,
 	WalletWrapper,
 	Wallet,
 	TokenWrapper,
 	Header,
+	HeaderSmall,
 	TokenRow,
 	A,
 	TokenImage,
@@ -142,14 +145,14 @@ class App extends Component {
 
 		const tokenBalancesRows = tokenBalances.map((tokenBalance) => (
 			<TokenRow className="row" key={tokenBalance.address}>
-				<div className="col-xs-4">
+				<div className="col-xs-6">
 					<A href={"https://etherscan.io/token/" + tokenBalance.address} target="_blank">
 						<TokenImage src={tokenBalance.logo} />
 						<TokenName>{tokenBalance.name}</TokenName>
 						<TokenSymbol>({tokenBalance.symbol})</TokenSymbol>
 					</A>
 				</div>
-				<div className="col-xs-8">
+				<div className="col-xs-6">
 					<A
 						href={
 							"https://etherscan.io/token/" +
@@ -171,22 +174,46 @@ class App extends Component {
 		));
 		return (
 			<Wrapper>
-				<Title>ERC20 Token Balance</Title>
-				<Description>A simple Dapp to check the balances of your ERC20 Tokens</Description>
-				<WalletWrapper>
-					Your account: <Wallet>{accounts.length ? accounts[0] : null}</Wallet>
-				</WalletWrapper>
-				<TokenWrapper>
-					<div className="row">
-						<div className="col-xs-4">
-							<Header>Token</Header>
-						</div>
-						<div className="col-xs-8">
-							<Header>Your Balance</Header>
-						</div>
+				<div className="row">
+					<div className="col-xs-6">
+						<TableWrapper>
+							<TableCell>
+								<Title>ERC20 Token Balance</Title>
+								<Description>
+									A simple Dapp to check the balances of your ERC20 Tokens
+								</Description>
+								<WalletWrapper>
+									Your account:{" "}
+									<Wallet>
+										{accounts.length ? (
+											<A
+												href={"https://etherscan.io/address/" + accounts[0]}
+												target="_blank"
+											>
+												{accounts[0]}
+											</A>
+										) : null}
+									</Wallet>
+								</WalletWrapper>
+							</TableCell>
+						</TableWrapper>
 					</div>
-					{tokenBalancesRows}
-				</TokenWrapper>
+					<div className="col-xs-6">
+						<TokenWrapper>
+							<div className="row">
+								<div className="col-xs-6">
+									<Header>
+										Token <HeaderSmall>(scroll down to view more)</HeaderSmall>
+									</Header>
+								</div>
+								<div className="col-xs-6">
+									<Header>Your Balance</Header>
+								</div>
+							</div>
+							{tokenBalancesRows}
+						</TokenWrapper>
+					</div>
+				</div>
 				<AlertContainer position="top-right">
 					{this.state.showAlert ? (
 						<Alert type="danger" headline="Oops!">

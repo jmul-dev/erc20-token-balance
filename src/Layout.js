@@ -4,8 +4,19 @@ export const Wrapper = styled.div`
 	padding: 30px;
 `;
 
+export const TableWrapper = styled.div`
+	display: table;
+	height: 90vh;
+`;
+
+export const TableCell = styled.div`
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+`;
+
 export const Title = styled.div`
-	font-size: 26px;
+	font-size: 42px;
 	font-weight: bold;
 `;
 
@@ -23,12 +34,20 @@ export const Wallet = styled.span`
 `;
 
 export const TokenWrapper = styled.div`
+	height: 90vh;
 	margin-top: 20px;
+	overflow-y: scroll;
+	overflow-x: hidden;
 `;
 
 export const Header = styled.div`
 	font-size: 20px;
 	font-weight: bold;
+`;
+
+export const HeaderSmall = styled.div`
+	font-size: 12px;
+	font-weight: normal;
 `;
 
 export const TokenRow = styled.div`
@@ -37,8 +56,10 @@ export const TokenRow = styled.div`
 
 export const A = styled.a`
 	text-decoration: none;
+	color: #eeeeee;
 	&:hover {
 		text-decoration: none;
+		color: #bbbbbb;
 	}
 `;
 
